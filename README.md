@@ -1,8 +1,8 @@
-# Weather-Stickers
+# WeatherStickers
 ***
 ## Description
 
-Weather-Stickers is a webpage 
+WeatherStickers is a webpage housing a seach engine designed to take third party api data from 
 
 ***
 ### Usage

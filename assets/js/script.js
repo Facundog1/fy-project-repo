@@ -1,4 +1,5 @@
- var giphyAPIKey = "sDv42NVlG2ZVPXsd3YNYJKouegkM1X18";
+// Variables for WeatherStickers
+var giphyAPIKey = "sDv42NVlG2ZVPXsd3YNYJKouegkM1X18";
  var weatherAPIkey = "fed330d490f63f8a5e01b53eaa09b02c"
 
 var searchForm = document.getElementById("search-form");
@@ -11,7 +12,7 @@ var conditons = document.getElementById("conditions");
 var weatherImage = document.getElementById("weather-Image");
 
 console.log(searchForm);
-
+//
 function getWeather(cityname) {
     var weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${weatherAPIkey}&units=imperial`
     fetch(weatherURL) 
@@ -29,7 +30,7 @@ function getWeather(cityname) {
         })
 }
 
-
+//
 function getGIF(weather) {
     console.log(weather);
     var giphyURL = `https://api.giphy.com/v1/gifs/search?q=${weather}+sky+weather&api_key=${giphyAPIKey}&rating=pg-13`
@@ -39,22 +40,17 @@ function getGIF(weather) {
         })
         .then(function(data) {
             console.log(data)
-            // var oldWeatherPic = document.getElementById("weather-picture");
-            // if (oldWeatherPic){
-            //     oldWeatherPic.remove();
-            // }
-            // var imgEl = document.createElement('img');
-            // imgEl.id = "weather-picture";
+        
             var imgUrl = data.data[0].images.fixed_height.url;
             var alt = data.data[0].title;
             weatherImage.src = imgUrl;
             weatherImage.alt = alt;
             // local storage 
-            // document.body.appendChild(imgEl);
+            
 
         })
 }
-
+//
 searchForm.addEventListener("submit",function(event){
     event.preventDefault() 
     var searchInput = document.getElementById("city-input")
@@ -63,9 +59,3 @@ searchForm.addEventListener("submit",function(event){
     getWeather(cityName)
 })
 
-// gifForm.addEventListener("submit", function(event){
-//     event.preventDefault();
-//     var gifSearch = document.getElementById("gif-search");
-//     var gifInput = gifSearch.value.trim();
-//     getGIF(gifInput);
-// })

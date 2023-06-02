@@ -49,7 +49,6 @@ function getGIF(weather) {
             var alt = data.data[0].title;
             weatherImage.src = imgUrl;
             weatherImage.alt = alt;
-            // he wants us to do it in our own way and also figure out how to make images go away and maybe find more weather focused gifs.
             // local storage 
             // document.body.appendChild(imgEl);
 
